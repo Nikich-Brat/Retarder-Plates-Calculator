@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="android-support-v4.dex.jar"/>
+    <File Path="cloud-messaging.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-ads-base.17.2.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-ads.17.2.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-analytics.16.0.8.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-base.16.0.1.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-basement.16.2.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-gass.17.2.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-identity.16.0.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-maps.16.1.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-stats.16.0.1.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-tasks.16.0.1.dex.jar"/>
+    <File Path="com-google-android-gms.play-services-wallet.16.0.1.dex.jar"/>
+    <File Path="com-google-firebase.firebase-analytics.16.4.0.dex.jar"/>
+    <File Path="com-google-firebase.firebase-common.16.1.0.dex.jar"/>
+    <File Path="com-google-firebase.firebase-iid-interop.16.0.1.dex.jar"/>
+    <File Path="com-google-firebase.firebase-iid.17.1.1.dex.jar"/>
+    <File Path="com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar"/>
+    <File Path="com-google-firebase.firebase-messaging.17.5.0.dex.jar"/>
+    <File Path="fmx.dex.jar"/>
+    <File Path="google-play-billing.dex.jar"/>
+    <File Path="google-play-licensing.dex.jar"/>
+    <File Path="Calculations.pas"/>
+    <File Path="DeltanVisualizator.pas"/>
+    <File Path="DeltanVisualizator.dfm"/>
+    <File Path="FunctionsForSeparating.pas"/>
+    <File Path="GeneralPath.pas"/>
+    <File Path="GeneralPath.dfm"/>
+    <File Path="LightAngleAndDrift.pas"/>
+    <File Path="LightAngleAndDrift.dfm"/>
+    <File Path="PlatesCalculations.pas"/>
+    <File Path="PlatesCalculations.dfm"/>
+    <File Path="PlatesWithBevelCorners.pas"/>
+    <File Path="PlatesWithBevelCorners.dfm"/>
+    <File Path="PolarizationVizualizator.pas"/>
+    <File Path="PolarizationVizualizator.dfm"/>
+    <File Path="RotationOfPolarization.pas"/>
+    <File Path="RotationOfPolarization.dfm"/>
+    <File Path="Settings.pas"/>
+    <File Path="Settings.dfm"/>
+    <File Path="JohnsMatrix.pas"/>
+    <File Path="JohnsMatrix.dfm"/>
+  </ProjectSortOrder>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.175,B:\Krasnoperov\Personal Workshop\LOTIS\matherials\GitSourses\PhasePlatesCalc\Proj\JohnsMatrix.pas=B:\Krasnoperov\Personal Workshop\LOTIS\matherials\GitSourses\PhasePlatesCalc\Proj\Unit9.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.274,=B:\Krasnoperov\Personal Workshop\LOTIS\matherials\GitSourses\PhasePlatesCalc\Proj\Unit9.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.175,B:\Krasnoperov\Personal Workshop\LOTIS\matherials\GitSourses\PhasePlatesCalc\Proj\JohnsMatrix.dfm=B:\Krasnoperov\Personal Workshop\LOTIS\matherials\GitSourses\PhasePlatesCalc\Proj\Unit9.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

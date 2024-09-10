@@ -1,0 +1,142 @@
+unit FunctionsForSeparating;
+
+interface
+
+uses
+Windows, Graphics, Messages, SysUtils, IniFiles, Variants, Classes, Dialogs, ExtCtrls, Math, Menus, GeneralPath;
+
+function DownloadMatherial(var math:TMatherial;f:TIniFile;mathnumber:integer):boolean;
+function ShowLightPenetration(img:TImage):boolean;
+
+function VisualizeCoordinateCircle(img:TImage;radius:integer;Color:TColor;angle:double):boolean;
+function VisualizePolarizationCoordinateAxis(img:TImage;radius:integer;Color:TColor):boolean;
+
+function DownloadMatherialFromFile(FileName:string;var dnmas,wlmas:FlArr):boolean;
+function StrToFloatReplace(from:string; var into:double):boolean;
+
+implementation
+
+function DownloadMatherial(var math:TMatherial;f:TIniFile;mathnumber:integer):boolean;
+begin
+  math.B1:=StrToFloat(f.ReadString(IntToStr(mathnumber),'B1','0'));
+  math.B2:=StrToFloat(f.ReadString(IntToStr(mathnumber),'B2','0'));
+  math.B3:=StrToFloat(f.ReadString(IntToStr(mathnumber),'B3','0'));
+  math.B4:=StrToFloat(f.ReadString(IntToStr(mathnumber),'B4','0'));
+  math.B5:=StrToFloat(f.ReadString(IntToStr(mathnumber),'B5','0'));
+  math.C1:=StrToFloat(f.ReadString(IntToStr(mathnumber),'C1','0'));
+  math.C2:=StrToFloat(f.ReadString(IntToStr(mathnumber),'C2','0'));
+  math.C3:=StrToFloat(f.ReadString(IntToStr(mathnumber),'C3','0'));
+  math.C4:=StrToFloat(f.ReadString(IntToStr(mathnumber),'C4','0'));
+  math.C5:=StrToFloat(f.ReadString(IntToStr(mathnumber),'C5','0'));
+  math.productname:=f.ReadString(IntToStr(mathnumber),'Productname','-');
+  math.producer:=f.ReadString(IntToStr(mathnumber),'Producer','-');
+  math.rangestart:=StrToFloat(f.ReadString(IntToStr(mathnumber),'rangestart','0'));
+  math.rangestop:=StrToFloat(f.ReadString(IntToStr(mathnumber),'rangestop','0'));
+  math.formula:=f.ReadString(IntToStr(mathnumber),'formula','-');
+  math.state:=f.ReadString(IntToStr(mathnumber),'state','-');
+  math.worktemprature:=StrToFloat(f.ReadString(IntToStr(mathnumber),'worktemprature','0'));
+  math.anisotrope:=StrToBool(f.ReadString(IntToStr(mathnumber),'anisotrop','false'));
+  math.e:=StrToBool(f.ReadString(IntToStr(mathnumber),'e','false'));
+  result:=true;
+end;
+
+function VisualizeCoordinateCircle(img:TImage;radius:integer;Color:TColor;angle:double):boolean;
+var i:integer;
+begin
+  result:=false;
+  img.Picture:=nil;//to refresh an image
+  img.Canvas.Ellipse(0, 0, radius*2, radius*2);
+  img.Canvas.Pen.Color:= Color;
+  for i:=0 to 359 do begin
+    if (i=135) or (i=45) or (i=0) or (i=90) or (i=180) or (i=225) or (i=270) or (i=315) then begin
+      img.Canvas.MoveTo(Trunc(radius+radius*cos(Pi*i/180 - Pi/2 + angle)),Trunc(radius+radius*sin(Pi*i/180 - Pi/2+ angle)));
+      img.Canvas.LineTo(Trunc(radius+radius*0.9*cos(Pi*i/180 - Pi/2+ angle)),Trunc(160+radius*0.9*sin(Pi*i/180 - Pi/2+ angle)));
+      img.Canvas.TextOut(Trunc(radius+radius*0.8*cos(Pi*i/180 - Pi/2+ angle)),Trunc(160+radius*0.8*sin(Pi*i/180 - Pi/2+ angle)),FloatToStr(i));
+    end else begin
+      img.Canvas.MoveTo(Trunc(radius+radius*cos(Pi*i/180 - Pi/2 + angle)),Trunc(radius+radius*sin(Pi*i/180 - Pi/2 + angle)));
+      img.Canvas.LineTo(Trunc(radius+radius*0.95*cos(Pi*i/180 - Pi/2 + angle)),Trunc(radius+radius*0.95*sin(Pi*i/180 - Pi/2 + angle)));
+    end;
+  end;
+  result:=true;
+end;
+
+function VisualizePolarizationCoordinateAxis(img:TImage;radius:integer;Color:TColor):boolean;
+var i:integer;
+begin
+  result:=false;
+  img.Canvas.Pen.Color:= Color;
+  for i:=0 to radius*2 do begin
+    if i mod 2 = 0 then
+      img.Canvas.MoveTo(Trunc(i),Trunc(radius))
+    else
+      img.Canvas.LineTo(Trunc(i),Trunc(radius));
+  end;
+  for i:=0 to radius*2 do begin
+    if i mod 2 = 0 then
+      img.Canvas.MoveTo(Trunc(radius),Trunc(i))
+    else
+      img.Canvas.LineTo(Trunc(radius),Trunc(i));
+  end;
+  img.Canvas.Pen.Color:= clBlack;
+  result:=true;
+end;
+
+function StrToFloatReplace(from:string;var into:double):boolean;
+var i:integer;
+begin
+  result:=false;
+  if from = '' then
+    exit;
+  if not TryStrToFloat(from,into) then begin
+    for i:=1 to length(from) do begin
+      if from[i] = '.' then
+        from[i]:=',';
+    end;
+    if not TryStrToFloat(from,into) then begin
+      MessageDlg('Check text below', mtInformation,[mbOk], 0);
+      exit;
+    end;
+  end;
+  result:=true;
+end;
+
+function ShowLightPenetration(img:TImage):boolean;
+begin
+  img.Picture:=nil;
+  img.Canvas.Pen.Color:=ClBlack;
+  img.Canvas.Rectangle(10, 10, 150, 150);
+  img.Canvas.Pen.Color:=ClRed;
+  img.Canvas.MoveTo(10,80);
+  img.Canvas.LineTo(150,80);
+  img.Canvas.LineTo(143,82); //draw an arrow
+  img.Canvas.MoveTo(150,80);
+  img.Canvas.LineTo(143,78); //draw an arrow
+  img.Canvas.Pen.Color:= clBlack;
+end;
+
+function DownloadMatherialFromFile(FileName:string;var dnmas,wlmas:FlArr):boolean;
+var
+ischeckedcompletely:boolean;
+DataFile: TextFile;
+len: integer;
+value1,value2:double;
+begin
+  ischeckedcompletely:=false;
+  len:=0;
+  AssignFile(DataFile,FileName);
+  Reset(DataFile);
+  while not Eof(DataFile) do begin
+    Readln(DataFile, value1, value2);
+    wlmas[len]:=value1/1000;
+    dnmas[len]:=value2;
+    inc(len);
+  end;
+  ischeckedcompletely:=true;
+  CloseFile(DataFile);
+  SetLength(wlmas,len);
+  SetLength(dnmas,len);
+  if ischeckedcompletely then
+    result:=true;
+end;
+
+end.

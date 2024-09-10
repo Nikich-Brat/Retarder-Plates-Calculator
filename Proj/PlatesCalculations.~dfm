@@ -1,0 +1,456 @@
+object Form4: TForm4
+  Left = 369
+  Top = 64
+  Width = 368
+  Height = 671
+  Caption = 'Retarder plates'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox3: TGroupBox
+    Left = 0
+    Top = 0
+    Width = 352
+    Height = 129
+    Align = alTop
+    Caption = 'Plate calculations'
+    TabOrder = 0
+    object Label39: TLabel
+      Left = 8
+      Top = 16
+      Width = 10
+      Height = 16
+      Caption = 'l/'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Symbol'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 8
+      Top = 40
+      Width = 13
+      Height = 16
+      Caption = 'l1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Symbol'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label18: TLabel
+      Left = 96
+      Top = 40
+      Width = 13
+      Height = 16
+      Caption = 'l2'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Symbol'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label17: TLabel
+      Left = 24
+      Top = 64
+      Width = 32
+      Height = 16
+      Caption = 'no-ne'
+      Font.Charset = GREEK_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Forte'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label44: TLabel
+      Left = 72
+      Top = 48
+      Width = 14
+      Height = 13
+      Caption = 'um'
+    end
+    object Label15: TLabel
+      Left = 160
+      Top = 48
+      Width = 14
+      Height = 13
+      Caption = 'um'
+      Visible = False
+    end
+    object Label14: TLabel
+      Left = 8
+      Top = 104
+      Width = 18
+      Height = 16
+      Caption = 'm1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Modern No. 20'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label21: TLabel
+      Left = 168
+      Top = 80
+      Width = 16
+      Height = 13
+      Caption = 'min'
+    end
+    object Label22: TLabel
+      Left = 168
+      Top = 104
+      Width = 19
+      Height = 13
+      Caption = 'max'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label23: TLabel
+      Left = 240
+      Top = 80
+      Width = 16
+      Height = 13
+      Caption = 'mm'
+    end
+    object Label24: TLabel
+      Left = 240
+      Top = 104
+      Width = 16
+      Height = 13
+      Caption = 'mm'
+    end
+    object Label45: TLabel
+      Left = 96
+      Top = 16
+      Width = 10
+      Height = 16
+      Caption = 'l/'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Symbol'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label46: TLabel
+      Left = 112
+      Top = 64
+      Width = 32
+      Height = 16
+      Caption = 'no-ne'
+      Font.Charset = GREEK_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Forte'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label47: TLabel
+      Left = 88
+      Top = 104
+      Width = 18
+      Height = 16
+      Caption = 'm2'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Modern No. 20'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object ComboBox5: TComboBox
+      Left = 24
+      Top = 16
+      Width = 49
+      Height = 24
+      AutoComplete = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ItemHeight = 16
+      ItemIndex = 0
+      ParentFont = False
+      TabOrder = 0
+      Text = '4'
+      OnChange = ComboBox5Change
+      Items.Strings = (
+        '4'
+        '2'
+        '1')
+    end
+    object Edit6: TEdit
+      Left = 24
+      Top = 40
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      Text = '0,532'
+      OnChange = Edit6Change
+    end
+    object Edit7: TEdit
+      Left = 112
+      Top = 40
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      Text = '1,064'
+      Visible = False
+      OnChange = Edit7Change
+    end
+    object Edit9: TEdit
+      Left = 24
+      Top = 80
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      Text = '0'
+    end
+    object ComboBox4: TComboBox
+      Left = 192
+      Top = 16
+      Width = 153
+      Height = 17
+      Style = csOwnerDrawFixed
+      ItemHeight = 11
+      TabOrder = 4
+      OnSelect = ComboBox4Select
+    end
+    object Edit8: TEdit
+      Left = 24
+      Top = 104
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 5
+      Text = '0'
+    end
+    object Edit10: TEdit
+      Left = 192
+      Top = 80
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      Text = '0,1'
+    end
+    object Edit11: TEdit
+      Left = 192
+      Top = 104
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+      Text = '10'
+    end
+    object BitBtn3: TBitBtn
+      Left = 192
+      Top = 32
+      Width = 153
+      Height = 49
+      Caption = 'Solve'
+      Font.Charset = BALTIC_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = '@Microsoft YaHei UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 8
+      OnClick = BitBtn3Click
+    end
+    object CheckBox5: TCheckBox
+      Left = 256
+      Top = 80
+      Width = 89
+      Height = 17
+      Caption = 'monochromate'
+      Checked = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      State = cbChecked
+      TabOrder = 9
+      OnClick = CheckBox5Click
+    end
+    object CheckBox6: TCheckBox
+      Left = 256
+      Top = 104
+      Width = 89
+      Height = 17
+      Caption = 'bichromate'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 10
+      OnClick = CheckBox6Click
+    end
+    object ComboBox6: TComboBox
+      Left = 112
+      Top = 16
+      Width = 49
+      Height = 24
+      AutoComplete = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ItemHeight = 16
+      ItemIndex = 0
+      ParentFont = False
+      TabOrder = 11
+      Text = '4'
+      Visible = False
+      OnChange = ComboBox6Change
+      Items.Strings = (
+        '4'
+        '2'
+        '1')
+    end
+    object Edit18: TEdit
+      Left = 112
+      Top = 80
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 12
+      Text = '0'
+      Visible = False
+    end
+    object Edit19: TEdit
+      Left = 112
+      Top = 104
+      Width = 49
+      Height = 24
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 13
+      Text = '0'
+      Visible = False
+    end
+    object Button1: TButton
+      Left = 72
+      Top = 80
+      Width = 41
+      Height = 25
+      Caption = 'Graph'
+      TabOrder = 14
+      OnClick = Button1Click
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Top = 129
+    Width = 175
+    Height = 342
+    Align = alClient
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Memo4: TMemo
+    Left = 175
+    Top = 129
+    Width = 177
+    Height = 342
+    Align = alRight
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    Visible = False
+  end
+  object Memo5: TMemo
+    Left = 0
+    Top = 471
+    Width = 352
+    Height = 161
+    Align = alBottom
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    Visible = False
+  end
+end
